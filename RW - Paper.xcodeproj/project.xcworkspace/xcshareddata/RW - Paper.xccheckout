@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5DBA4207-BC3F-4CF5-A752-AD5C50F88BDC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RW - Paper</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2B57F1FFE41DB3073B9FB5BCF6742F373993628A</key>
+		<string>bitbucket.org:hegedus90/ray-wenderlich-paper.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RW - Paper.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2B57F1FFE41DB3073B9FB5BCF6742F373993628A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>bitbucket.org:hegedus90/ray-wenderlich-paper.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2B57F1FFE41DB3073B9FB5BCF6742F373993628A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2B57F1FFE41DB3073B9FB5BCF6742F373993628A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RW%20-%20Paper</string>
+		</dict>
+	</array>
+</dict>
+</plist>
