@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		948F07A3239F79FD0052BF37 /* BooksLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F07A2239F79FD0052BF37 /* BooksLayout.swift */; };
 		948F07A6239F9B910052BF37 /* BookLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F07A5239F9B910052BF37 /* BookLayout.swift */; };
+		948F07A8239FA7E30052BF37 /* CustomNavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F07A7239FA7E30052BF37 /* CustomNavigationControllerViewController.swift */; };
+		948F07AA239FA90E0052BF37 /* BookOpeningTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F07A9239FA90E0052BF37 /* BookOpeningTransition.swift */; };
 		9A0BA4B01A3EDD7A004FC741 /* Books.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A0BA4AF1A3EDD7A004FC741 /* Books.plist */; };
 		9A0BA4B21A3EDF20004FC741 /* BookStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BA4B11A3EDF20004FC741 /* BookStore.swift */; };
 		9A0BA4B41A3EDF25004FC741 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BA4B31A3EDF25004FC741 /* Book.swift */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		948F07A2239F79FD0052BF37 /* BooksLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksLayout.swift; sourceTree = "<group>"; };
 		948F07A5239F9B910052BF37 /* BookLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookLayout.swift; sourceTree = "<group>"; };
+		948F07A7239FA7E30052BF37 /* CustomNavigationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationControllerViewController.swift; sourceTree = "<group>"; };
+		948F07A9239FA90E0052BF37 /* BookOpeningTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookOpeningTransition.swift; sourceTree = "<group>"; };
 		9A0BA4AF1A3EDD7A004FC741 /* Books.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Books.plist; sourceTree = "<group>"; };
 		9A0BA4B11A3EDF20004FC741 /* BookStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookStore.swift; sourceTree = "<group>"; };
 		9A0BA4B31A3EDF25004FC741 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 			children = (
 				9A3151021A3353DE0014C868 /* Books */,
 				9A3151031A3353E70014C868 /* Book */,
+				948F07A7239FA7E30052BF37 /* CustomNavigationControllerViewController.swift */,
+				948F07A9239FA90E0052BF37 /* BookOpeningTransition.swift */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 				TargetAttributes = {
 					9A80C4421A2C844B00725F32 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = HFN559GQBY;
 					};
 					9A80C4571A2C844C00725F32 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -342,7 +349,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				948F07AA239FA90E0052BF37 /* BookOpeningTransition.swift in Sources */,
 				9ABED16E1A33A5ED00410347 /* BookCoverCell.swift in Sources */,
+				948F07A8239FA7E30052BF37 /* CustomNavigationControllerViewController.swift in Sources */,
 				9A0BA4B21A3EDF20004FC741 /* BookStore.swift in Sources */,
 				948F07A3239F79FD0052BF37 /* BooksLayout.swift in Sources */,
 				9A142CDB1A404FBD0093DFB7 /* UIImage+Helpers.swift in Sources */,
@@ -493,13 +502,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = HFN559GQBY;
 				INFOPLIST_FILE = "RW - Paper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.RW---Paperd";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RW - Paper/RW - Paper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -508,12 +519,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = HFN559GQBY;
 				INFOPLIST_FILE = "RW - Paper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.RW---Paperd";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RW - Paper/RW - Paper-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -97,30 +97,30 @@ class BookPageCell: UICollectionViewCell {
 		
 		if isRightPage {
 			// Right page
-			shadowLayer.colors = NSArray(objects:
+			shadowLayer.colors = [
                 UIColor.darkGray.withAlphaComponent(inverseRatio * 0.45).cgColor,
                                          UIColor.darkGray.withAlphaComponent(inverseRatio * 0.40).cgColor,
                                          UIColor.darkGray.withAlphaComponent(inverseRatio * 0.55).cgColor
-			) as! [UIColor]
-			shadowLayer.locations = NSArray(objects:
+			]
+			shadowLayer.locations = [
                 NSNumber(value: 0.00),
 				NSNumber(value: 0.02),
 				NSNumber(value: 1.00)
-			) as! [NSNumber]
+			]
 		} else {
 			// Left page
-			shadowLayer.colors = NSArray(objects:
+			shadowLayer.colors = [
                 UIColor.darkGray.withAlphaComponent(inverseRatio * 0.30).cgColor,
                                          UIColor.darkGray.withAlphaComponent(inverseRatio * 0.40).cgColor,
                                          UIColor.darkGray.withAlphaComponent(inverseRatio * 0.50).cgColor,
                                          UIColor.darkGray.withAlphaComponent(inverseRatio * 0.55).cgColor
-			) as! [UIColor]
-			shadowLayer.locations = NSArray(objects:
+			]
+			shadowLayer.locations = [
 				NSNumber(value: 0.00),
 				NSNumber(value: 0.50),
 				NSNumber(value: 0.98),
 				NSNumber(value: 1.00)
-			) as! [NSNumber]
+			]
 		}
 		
 		if !animated {

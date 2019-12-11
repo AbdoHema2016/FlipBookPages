@@ -23,7 +23,18 @@
 import UIKit
 
 class BooksViewController: UICollectionViewController {
-    
+
+    var transition: BookOpeningTransition?
+    //1
+    var interactionController: UIPercentDrivenInteractiveTransition?
+    //2
+    var recognizer: UIGestureRecognizer? {
+        didSet {
+            if let recognizer = recognizer {
+                collectionView?.addGestureRecognizer(recognizer)
+            }
+        }
+    }
     var books: Array<Book>? {
         didSet {
             collectionView?.reloadData()
@@ -33,8 +44,53 @@ class BooksViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         books = BookStore.sharedInstance.loadBooks(plist: "Books")
+        recognizer = UIPinchGestureRecognizer(target: self, action: "handlePinch:")
         
     }
+    // MARK: Gesture recognizer action
+    func handlePinch(recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .began:
+            //1
+            interactionController = UIPercentDrivenInteractiveTransition()
+            //2
+            if recognizer.scale >= 1 {
+                //3
+                if recognizer.view == collectionView {
+                    //4
+                    var book = self.selectedCell()?.book
+                    //5
+                    self.openBook(book: book)
+                }
+                //6
+            } else {
+                //7
+                navigationController?.popViewController(animated: true)
+            }
+        case .changed:
+            //8
+            if transition!.isPush {
+                //9
+                var progress = min(max(abs((recognizer.scale - 1)) / 5, 0), 1)
+                //10
+                interactionController?.update(progress)
+                //11
+            } else {
+                //12
+                var progress = min(max(abs((1 - recognizer.scale)), 0), 1)
+                //13
+                interactionController?.update(progress)
+            }
+        case .ended:
+            //14
+            interactionController?.finish()
+            //15
+            interactionController = nil
+        default:
+            break
+        }
+    }
+
     
     // MARK: Helpers
     func selectedCell() -> BookCoverCell? {
@@ -46,10 +102,12 @@ class BooksViewController: UICollectionViewController {
         }
         return nil
     }
-    func openBook() {
+    func openBook(book: Book?) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "BookViewController") as! BookViewController
         vc.book = selectedCell()?.book
         // UICollectionView loads it's cells on a background thread, so make sure it's loaded before passing it to the animation handler
+        //1
+        vc.view.snapshotView(afterScreenUpdates: true)
         DispatchQueue.main.async {
             self.navigationController?.pushViewController(vc, animated: true)
             return
@@ -72,6 +130,26 @@ class BooksViewController: UICollectionViewController {
 //    }
     
 }
+extension BooksViewController {
+    func animationControllerForPresentController(vc: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        // 1
+        var transition = BookOpeningTransition()
+        // 2
+        transition.isPush = true
+        transition.interactionController = interactionController
+        // 3
+        self.transition = transition
+        // 4
+        return transition
+    }
+    func animationControllerForDismissController(vc: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        var transition = BookOpeningTransition()
+        transition.isPush = false
+        transition.interactionController = interactionController
+        self.transition = transition
+        return transition
+    }
+}
 
 // MARK: UICollectionViewDelegate
 
@@ -80,7 +158,7 @@ extension BooksViewController {
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var book = books?[indexPath.row]
-        openBook()
+        openBook(book: book)
     }
     
 }

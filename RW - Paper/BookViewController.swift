@@ -29,6 +29,13 @@ class BookViewController: UICollectionViewController {
             collectionView?.reloadData()
         }
     }
+    var recognizer: UIGestureRecognizer? {
+        didSet {
+            if let recognizer = recognizer {
+                collectionView?.addGestureRecognizer(recognizer)
+            }
+        }
+    }
 }
 
 // MARK: UICollectionViewDataSource
