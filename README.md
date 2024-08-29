@@ -1,4 +1,4 @@
-# FlippingBookPages
+# FlipBookPages
 
 That is a swift 4.2 implementation for Raywenderlich tutorial article for How to Create an iOS Book Open Animation built 
 originaly with swift 2 .
